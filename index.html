@@ -91,6 +91,39 @@ img:hover {
   margin: 0 auto;
   line-height: 1.6;
 }
+.projects {
+  margin-top: 60px;
+}
+
+.projects h2 {
+  color: #38bdf8;
+  margin-bottom: 25px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 15px auto;
+  max-width: 600px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card h3 {
+  margin-bottom: 8px;
+  color: #22d3ee;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
 
 
 
@@ -106,7 +139,27 @@ img:hover {
   I enjoy working on intelligent systems, exploring machine learning,
   and building software that solves real problems.
 </p>
+<section class="projects">
+  <h2>Projects</h2>
 
+  <div class="project-card">
+    <h3>AI Chatbot (Java)</h3>
+    <p>
+      Built a question–answer chatbot using Java, trained on CSV data,
+      focusing on intent matching and response accuracy.
+    </p>
+  </div>
+
+  <div class="project-card">
+    <h3>Cerebro</h3>
+    <p>
+      A productivity web app with a challenge tracker and study timer,
+      designed to help students stay consistent and focused.
+    </p>
+  </div>
+
+</section>
+    
     <a href="https://github.com/aradhya-kumar">GitHub</a>
     <a href="https://www.linkedin.com/in/aradhya-kumar">LinkedIn</a>
 
