@@ -19,17 +19,14 @@ a:hover {
   color: #0f172a;
 }
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #0f172a;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
+body {
+  margin: 0;
+  background: #0f172a;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
     h1 {
       font-size: 2.5rem;
       color: #38bdf8;
@@ -127,7 +124,7 @@ img:hover {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 2fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 25px;
   max-width: 900px;
   margin: 0 auto;
@@ -139,61 +136,72 @@ img:hover {
   }
 }
 
+    .hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
   </style>
 </head>
 <body>
 
-  <div>
-    <img src="profile.jpg" alt="Aradhya Kumar">
-    <h1>Hi, I’m Aradhya 👋</h1>
-    <p>CS student | AI & ML enthusiast | Software developer | Design hobbyist</p>
-    <p style="max-width: 600px; margin: 15px auto;">
-  I enjoy working on intelligent systems, exploring machine learning,
-  and building software that solves real problems.
-</p>
+<div class="hero">
+  <img src="profile.jpg" alt="Aradhya Kumar">
+  <h1>Hi, I’m Aradhya 👋</h1>
+  <p>CS student | AI & ML enthusiast | Software developer | Design hobbyist</p>
+  <p>
+    I enjoy working on intelligent systems, exploring machine learning,
+    and building software that solves real problems.
+  </p>
+</div>
+
 <section class="projects">
   <h2>Projects</h2>
 
-  <div class="project-card">
-    
-    <h3>PawsNet</h3>
-    <p>A convolutional neural network trained to classify 
-      images of cats and dogs with high accuracy using deep learning techniques.
-    </p>
-  </div>
-  
-  <div class="project-card">
-      
-    <h3>Benne10 ChatBot</h3>   
-    <p>
-      Built a question answer chatbot using Java, trained on CSV data,
-      focusing on intent matching and response accuracy.
-    </p>
-  </div>
+  <div class="projects-grid">
 
     <div class="project-card">
-    <h3>Vision ID</h3>
-    <p>
-      A computer vision–based system for detecting and 
-      recognizing human faces using machine learning techniques.
-    </p>
-  </div>
-  
-  <div class="project-card">
-    <h3>Cerebro</h3>
-    <p>
-      A productivity web app with a challenge tracker and study timer,
-      designed to help students stay consistent and focused.
-    </p>
-  </div>
+      <h3>PawsNet</h3>
+      <p>
+        A convolutional neural network trained to classify 
+        images of cats and dogs with high accuracy using deep learning techniques.
+      </p>
+    </div>
 
+    <div class="project-card">
+      <h3>Benne10 ChatBot</h3>
+      <p>
+        Built a question answer chatbot using Java, trained on CSV data,
+        focusing on intent matching and response accuracy.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>Vision ID</h3>
+      <p>
+        A computer vision–based system for detecting and 
+        recognizing human faces using machine learning techniques.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>Cerebro</h3>
+      <p>
+        A productivity web app with a challenge tracker and study timer,
+        designed to help students stay consistent and focused.
+      </p>
+    </div>
+
+  </div>
 </section>
+
     
     <a href="https://github.com/aradhya-kumar">GitHub</a>
     <a href="https://www.linkedin.com/in/aradhya-kumar">LinkedIn</a>
-
-  </div>
 
 </body>
 </html>
