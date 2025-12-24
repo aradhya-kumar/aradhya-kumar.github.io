@@ -60,13 +60,20 @@ a:hover {
     transform: translateY(0);
   }
 }
-    img {
+img {
   width: 140px;
   height: 140px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #38bdf8;
   margin-bottom: 20px;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.6);
 }
 
 
