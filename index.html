@@ -4,6 +4,21 @@
   <meta charset="UTF-8">
   <title>Aradhya Kumar Rao</title>
   <style>
+    a {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 22px;
+  border: 1px solid #22d3ee;
+  border-radius: 6px;
+  color: #22d3ee;
+  transition: 0.3s;
+}
+
+a:hover {
+  background: #22d3ee;
+  color: #0f172a;
+}
+
     body {
       margin: 0;
       min-height: 100vh;
@@ -31,6 +46,21 @@
       text-decoration: none;
       font-weight: bold;
     }
+    div {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
   </style>
 </head>
 <body>
@@ -38,7 +68,14 @@
   <div>
     <h1>Hi, I’m Aradhya 👋</h1>
     <p>CS student | AI & ML enthusiast | Software developer | Design hobbyist</p>
+    <p style="max-width: 600px; margin: 15px auto;">
+  I enjoy working on intelligent systems, exploring machine learning,
+  and building software that solves real problems.
+</p>
+
     <a href="https://github.com/aradhya-kumar">GitHub</a>
+    <a href="https://www.linkedin.com/in/aradhya-kumar">LinkedIn</a>
+
   </div>
 
 </body>
