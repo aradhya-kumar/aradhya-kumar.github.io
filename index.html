@@ -3,163 +3,181 @@
 <head>
   <meta charset="UTF-8">
   <title>Aradhya Kumar Rao</title>
+
   <style>
-    a {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 10px 22px;
-  border: 1px solid #22d3ee;
-  border-radius: 6px;
-  color: #22d3ee;
-  transition: 0.3s;
-}
-
-a:hover {
-  background: #22d3ee;
-  color: #0f172a;
-}
-
-body {
-  margin: 0;
-  background: #0f172a;
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-    h1 {
-      font-size: 2.5rem;
-      color: #38bdf8;
-      margin-bottom: 10px;
+    /* ---------- GLOBAL ---------- */
+    body {
+      margin: 0;
+      background: #0f172a;
+      color: white;
+      font-family: Arial, sans-serif;
     }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+    }
+
     p {
-      font-size: 1.1rem;
+      line-height: 1.6;
       opacity: 0.9;
     }
-    a {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 12px 26px;
-  border-radius: 8px;
-  border: 1px solid #22d3ee;
-  color: #22d3ee;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
 
-a:hover {
-  background: #22d3ee;
-  color: #0f172a;
-  box-shadow: 0 0 15px rgba(34, 211, 238, 0.6);
-}
-
-    div {
-  animation: fadeIn 1.2s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #38bdf8;
-  margin-bottom: 20px;
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(56, 189, 248, 0.6);
-}
-    p {
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-.projects {
-  margin-top: 60px;
-}
-
-.projects h2 {
-  color: #38bdf8;
-  margin-bottom: 25px;
-}
-
-.project-card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 10px;
-  margin: 15px auto;
-  max-width: 600px;
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card h3 {
-  margin-bottom: 8px;
-  color: #22d3ee;
-}
-
-.project-card p {
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-    @media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+    /* ---------- HERO ---------- */
     .hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
 
+    .hero-left {
+      max-width: 520px;
+    }
 
+    .hero-left h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .hero-text {
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: #5cff00;
+      color: #0f172a;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(92, 255, 0, 0.4);
+    }
+
+    .hero-right img {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.15);
+    }
+
+    /* ---------- PROJECTS ---------- */
+    .projects h2 {
+      color: #38bdf8;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: rgba(255,255,255,0.05);
+      padding: 25px;
+      border-radius: 12px;
+      transition: 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    .project-card h3 {
+      color: #22d3ee;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .project-link:hover {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    footer a {
+      margin: 0 12px;
+      color: #22d3ee;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .hero-left {
+        text-align: center;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-<div class="hero">
-  <img src="profile.jpg" alt="Aradhya Kumar">
-  <h1>Hi, I’m Aradhya 👋</h1>
-  <p><strong>CS student | AI & ML enthusiast | Software developer | Design hobbyist</strong></p>
-  <p>
-    I enjoy working on intelligent systems, exploring machine learning,
-    and building software that solves real problems.
-  </p>
-</div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <h1>Aradhya Kumar Rao</h1>
+    <p class="hero-text">
+      A Computer Science student specializing in AI & ML,
+      focused on building intelligent, scalable solutions
+      with real-world impact.
+    </p>
+    <a href="#projects" class="cta-btn">Let’s get started →</a>
+  </div>
 
-<section class="projects">
+  <div class="hero-right">
+    <img src="profile.jpg" alt="Aradhya Kumar Rao">
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
   <h2>Projects</h2>
 
   <div class="projects-grid">
@@ -167,41 +185,57 @@ img:hover {
     <div class="project-card">
       <h3>PawsNet</h3>
       <p>
-        A convolutional neural network trained to classify 
-        images of cats and dogs with high accuracy using deep learning techniques.
+        CNN-based image classification system to differentiate
+        between cats and dogs using deep learning.
       </p>
+      <a class="project-link"
+         href="https://github.com/aradhya-kumar/pawsnet-cnn"
+         target="_blank">
+        View on GitHub
+      </a>
     </div>
 
     <div class="project-card">
       <h3>Benne10 ChatBot</h3>
       <p>
-        Built a question answer chatbot using Java, trained on CSV data,
-        focusing on intent matching and response accuracy.
+        Java-based question–answer chatbot trained on CSV data
+        with intent matching and response accuracy.
       </p>
+      <a class="project-link" style="opacity:0.5; cursor:not-allowed;">
+        Repo coming soon
+      </a>
     </div>
 
     <div class="project-card">
       <h3>Vision ID</h3>
       <p>
-        A computer vision–based system for detecting and 
-        recognizing human faces using machine learning techniques.
+        Face recognition system using computer vision and
+        machine learning techniques.
       </p>
+      <a class="project-link" style="opacity:0.5; cursor:not-allowed;">
+        Repo coming soon
+      </a>
     </div>
 
     <div class="project-card">
       <h3>Cerebro</h3>
       <p>
-        A productivity web app with a challenge tracker and study timer,
-        designed to help students stay consistent and focused.
+        Productivity web app with challenge tracking and
+        study session timers.
       </p>
+      <a class="project-link" style="opacity:0.5; cursor:not-allowed;">
+        Repo coming soon
+      </a>
     </div>
 
   </div>
 </section>
 
-    
-    <a href="https://github.com/aradhya-kumar">GitHub</a>
-    <a href="https://www.linkedin.com/in/aradhya-kumar">LinkedIn</a>
+<!-- FOOTER -->
+<footer>
+  <a href="https://github.com/aradhya-kumar">GitHub</a>
+  <a href="https://www.linkedin.com/in/aradhya-kumar">LinkedIn</a>
+</footer>
 
 </body>
 </html>
