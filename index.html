@@ -27,13 +27,15 @@
     }
 
     /* ---------- HERO ---------- */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-    }
+.hero {
+  min-height: 100vh;
+  padding-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
 
     .hero-left {
       max-width: 520px;
@@ -154,13 +156,73 @@
         grid-template-columns: 1fr;
       }
     }
+
+    .nav-links {
+  display: none;
+}
+
+    .hero-right img {
+  margin-bottom: 20px;
+}
+
+
+    /* ---------- NAVBAR ---------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.nav-logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #5cff00;
+}
+
+.nav-links a {
+  margin-left: 25px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  color: #5cff00;
+}
+
+    html {
+  scroll-behavior: smooth;
+}
+
+
   </style>
 </head>
 
 <body>
 
+  <nav class="navbar">
+  <div class="nav-logo">Aradhya.</div>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="https://github.com/aradhya-kumar" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/aradhya-kumar" target="_blank">LinkedIn</a>
+  </div>
+</nav>
+
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="home">
   <div class="hero-left">
     <h1>Aradhya Kumar Rao</h1>
     <p class="hero-text">
