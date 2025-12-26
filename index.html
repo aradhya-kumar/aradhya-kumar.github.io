@@ -34,6 +34,20 @@
       scroll-behavior: smooth;
     }
 
+    body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(56,189,248,0.04),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+
     /* ---------- NAVBAR ---------- */
     .navbar {
       position: fixed;
@@ -47,7 +61,10 @@
       align-items: center;
       background: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
       z-index: 1000;
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
     }
 
     .nav-left {
@@ -55,11 +72,19 @@
       align-items: center;
     }
 
-    .nav-logo {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #5cff00;
-    }
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  transition: 0.3s ease;
+}
+
+.nav-logo:hover {
+  text-shadow:
+    0 0 10px rgba(128,128,128,0.8),
+    0 0 25px rgba(128,128,128,0.4);
+}
+
 
     .nav-center {
       display: flex;
@@ -72,11 +97,26 @@
       font-size: 0.9rem;
       opacity: 0.75;
       transition: 0.3s;
+      position: relative;
     }
 
     .nav-center a:hover {
       opacity: 1;
-      color: #5cff00;
+      color: #808080;
+    }
+
+    .nav-center a::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 0;
+      background: #808080;
+      transition: width 0.3s ease;
+      margin-top: 4px;
+    }
+
+    .nav-center a:hover::after {
+      width: 100%;
     }
 
     .nav-right {
@@ -95,20 +135,55 @@
 
     .nav-right a:hover {
       opacity: 1;
-      color: #5cff00;
+      color: #ffd700;
     }
 
     /* ---------- HERO ---------- */
     .hero {
-      min-height: 100vh;
-      padding-top: 120px;
-      display: flex;
-      align-items: flex-start;
+  position: relative;
+  min-height: 100vh;
+  padding-top: 160px;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(
+    circle at top,
+    #0b1220 0%,
+    #020617 70%
+  );
+  }
+
+/* SOFT FADE OUT */
+    .hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 320px;
+  background: linear-gradient(
+    to bottom,
+    rgba(2,6,23,0) 0%,
+    #020617 100%
+  );
+  pointer-events: none;
+  }
+
+
+    .hero::before {
+     content: "";
+     position: absolute;
+     inset: 0;
+     background: radial-gradient(
+     circle at top,
+     rgba(255, 255, 255, 0.096),
+     transparent 60%
+  );
+  pointer-events: none;
     }
 
     .hero-container {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1400px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -121,8 +196,9 @@
     }
 
     .hero-left h1 {
-      font-size: 3rem;
-      font-weight: 600;
+      font-size: 4rem;
+      line-height: 1.1;
+      font-weight: 700;
       margin-bottom: 15px;
     }
 
@@ -133,29 +209,36 @@
 
     .cta-btn {
       display: inline-block;
-      background: #5cff00;
-      color: #0f172a;
+      background: #38bdf8;
+      color: #020617;
       padding: 14px 28px;
       border-radius: 8px;
       font-weight: bold;
       text-decoration: none;
       transition: 0.3s ease;
+      box-shadow: 0 0 0 1px rgba(0, 195, 255, 0.25);
     }
 
     .cta-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(92, 255, 0, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 195, 255, 0.4);
     }
 
     .hero-right img {
-      width: 220px;
-      height: 220px;
+      width: 400px;
+      height: 400px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid rgba(255,255,255,0.12);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.1),
+        0 0 40px rgba(255,255,255,0.08);
     }
 
     /* ---------- PROJECTS ---------- */
+    .projects {
+    }
+
     .projects h2 {
       color: #38bdf8;
       margin-bottom: 40px;
@@ -175,6 +258,7 @@
       background: rgba(255,255,255,0.05);
       padding: 25px;
       border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.06);
       transition: 0.3s ease;
     }
 
@@ -242,6 +326,168 @@
         display: none;
       }
     }
+
+    .icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-link svg {
+  transition: transform 0.3s ease;
+}
+
+.icon-link:hover svg {
+  transform: scale(1.15);
+}
+
+.icon-link {
+  position: relative;
+}
+
+.icon-link::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: -28px;
+  font-size: 0.7rem;
+  background: rgba(0,0,0,0.7);
+  padding: 4px 8px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.icon-link:hover::after {
+  opacity: 1;
+}
+
+.icon-link svg {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.icon-link:hover svg {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px rgba(92, 255, 0, 0.8));
+}
+
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow:
+    0 0 0 1px rgba(56,189,248,0.3),
+    0 15px 30px rgba(0,0,0,0.4),
+    0 0 30px rgba(56,189,248,0.35);
+}
+
+/* ---------- ABOUT ---------- */
+.about {
+  position: relative;
+  padding: 140px 8% 120px;
+  background: linear-gradient(
+    to bottom,
+    #020617 0%,
+    #020617 100%
+  );
+}
+
+
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  color: #38bdf8;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+/* TAGS */
+.about-tags {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.about-tags span {
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  opacity: 0.85;
+  transition: 0.3s;
+}
+
+.about-tags span:hover {
+  opacity: 1;
+  border-color: #38bdf8;
+  box-shadow: 0 0 20px rgba(56,189,248,0.25);
+}
+
+.timeline-title {
+  margin-bottom: 50px;
+}
+
+.timeline-item {
+  margin-bottom: 60px;
+}
+
+.timeline-content h3 {
+  margin-bottom: 6px;
+}
+
+.timeline-date {
+  margin-bottom: 12px;
+}
+
+.timeline-item {
+  margin-bottom: 80px;
+}
+
+.timeline-content {
+  padding-top: 10px;
+}
+
+.timeline-date {
+  display: inline-block;
+  margin-bottom: 14px;
+  opacity: 0.75;
+  font-size: 0.9rem;
+}
+
+section {
+  position: relative;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.08),
+    transparent
+  );
+}
+
+
   </style>
 </head>
 
@@ -249,8 +495,11 @@
 
 <!-- NAVBAR -->
 <nav class="navbar">
+
   <div class="nav-left">
-    <span class="nav-logo">Aradhya.</span>
+    <span class="nav-logo" style="text-align:right;">
+        My Personal<br>Portfolio
+    </span>
   </div>
 
   <div class="nav-center">
@@ -262,9 +511,36 @@
   </div>
 
   <div class="nav-right">
-    <a href="https://www.linkedin.com/in/aradhya-kumar" target="_blank">in</a>
-    <a href="https://x.com/" target="_blank">X</a>
-    <a href="https://github.com/aradhya-kumar" target="_blank">GitHub</a>
+
+    <a href="mailto:aradhyamayankrao2005@gmail.com"
+   class="icon-link"
+   aria-label="Email">
+     <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+     </svg>
+    </a>
+
+    <a href="https://www.linkedin.com/in/aradhya-kumar" 
+   target="_blank" 
+   class="icon-link" 
+   aria-label="LinkedIn">
+     <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.047c.476-.9 1.637-1.85 3.368-1.85 3.6 0 4.268 2.37 4.268 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.777 13.019H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.727v20.545C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.273V1.727C24 .774 23.2 0 22.222 0z"/>
+     </svg>
+    </a>
+
+    <a href="https://x.com/aradhya_0pzzzz" target="_blank" class="icon-link" aria-label="X (Twitter)">
+     <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+        <path d="M18.244 2H21.37l-6.91 7.9L22.5 22h-6.53l-5.12-6.44L5.2 22H2.07l7.39-8.44L1.5 2h6.7l4.63 5.78L18.244 2zm-1.14 18h1.73L7.08 4h-1.8l11.83 16z"/>
+     </svg>
+    </a>
+
+    <a href="https://github.com/aradhya-kumar" target="_blank" class="icon-link">
+     <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+        <path d="M12 0.3C5.37 0.3 0 5.67 0 12.3c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.73.08-.73 1.21.08 1.85 1.25 1.85 1.25 1.08 1.85 2.84 1.32 3.53 1 .11-.78.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.47 5.92.43.38.81 1.11.81 2.24v3.32c0 .32.22.69.83.57C20.56 22.1 24 17.6 24 12.3 24 5.67 18.63 0.3 12 0.3z"/>
+     </svg>
+    </a>
+
   </div>
 </nav>
 
@@ -272,7 +548,12 @@
 <section class="hero" id="home">
   <div class="hero-container">
     <div class="hero-left">
-      <h1>Aradhya Kumar Rao</h1>
+      <h1>Hi 👋,</h1>
+    <h1 class="hero-title">
+      <span>I'm Aradhya Kumar<br></span>
+      <span>Rao</span>
+    </h1>
+
       <p class="hero-text">
         A Computer Science student specializing in AI & ML,
         focused on building intelligent, scalable solutions
@@ -282,21 +563,103 @@
     </div>
 
     <div class="hero-right">
-      <img src="profile.jpg" alt="Aradhya Kumar Rao">
+      <a href="#about" class="profile-link">
+    <img src="profile.jpg" alt="Aradhya Kumar Rao">
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-container">
+    <h2>About Me</h2>
+
+    <p class="about-text">
+      I’m a Computer Science student with a strong interest in Artificial Intelligence
+      and Machine Learning. I enjoy building intelligent systems, experimenting with
+      deep learning models, and turning ideas into real-world software solutions.
+    </p>
+
+    <p class="about-text">
+      My work focuses on writing clean, scalable code and understanding how systems
+      work under the hood. I like learning by building — whether it’s CNNs, chatbots,
+      or productivity tools.
+    </p>
+
+    <div class="about-tags">
+      <span>AI & ML</span>
+      <span>Deep Learning</span>
+      <span>Computer Vision</span>
+      <span>Java</span>
+      <span>Python</span>
+      <span>Problem Solving</span>
     </div>
   </div>
 </section>
+
+
+<!-- TIMELINE -->
+<section class="timeline" id="timeline">
+  <div class="timeline-container">
+    <h2 class="timeline-title">Education</h2>
+
+    <div class="timeline-item">
+      <span class="timeline-dot"></span>
+      <div class="timeline-content">
+        <h3>Computer Science Student at Bennett University</h3><hr>
+        <span class="timeline-date">2024 – Present</span>
+        <p>
+          Pursuing Computer Science with a focus on Artificial Intelligence
+          and Machine Learning. Actively building projects and strengthening
+          core CS fundamentals.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="timeline-dot"></span>
+      <div class="timeline-content">
+        <h3>Senior Secondary Education (Classes XI–XII)</h3><hr>
+        <span class="timeline-date">2020 – 2022</span>
+        <p>
+          Completed my higher secondary education in the Non-Medical Science
+          stream from <strong><i>Resonance Hyderabad</i></strong>, building a
+          strong foundation in Mathematics and analytical thinking. This phase
+          of schooling developed discipline and a structured approach to learning.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="timeline-dot"></span>
+      <div class="timeline-content">
+        <h3>Secondary Education (Classes VI–X)</h3><hr>
+        <span class="timeline-date">2016 – 2020</span>
+        <p>
+          Completed my secondary education from
+          <strong><i>Shree Swaminarayan Gurukul International School</i></strong>,
+          developing strong academic fundamentals, discipline, and consistency
+          in learning.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- PROJECTS -->
 <section class="projects" id="projects">
   <h2>Projects</h2>
 
   <div class="projects-grid">
-
     <div class="project-card">
       <h3>PawsNet</h3>
       <p>
-        CNN-based image classification system to differentiate
+        CNN based image classification system to differentiate
         between cats and dogs using deep learning.
       </p>
       <a class="project-link"
@@ -338,7 +701,6 @@
         Repo coming soon
       </a>
     </div>
-
   </div>
 </section>
 
