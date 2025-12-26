@@ -6,6 +6,10 @@
 
   <style>
     /* ---------- GLOBAL ---------- */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background: #0f172a;
@@ -36,31 +40,60 @@
       top: 0;
       left: 0;
       width: 100%;
-      padding: 20px 8%;
-      display: flex;
-      justify-content: space-between;
+      height: 70px;
+      padding: 0 8%;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
       background: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(10px);
       z-index: 1000;
     }
 
+    .nav-left {
+      display: flex;
+      align-items: center;
+    }
+
     .nav-logo {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: bold;
       color: #5cff00;
     }
 
-    .nav-links a {
-      margin-left: 25px;
+    .nav-center {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-center a {
       color: white;
       text-decoration: none;
       font-size: 0.9rem;
-      opacity: 0.85;
+      opacity: 0.75;
       transition: 0.3s;
     }
 
-    .nav-links a:hover {
+    .nav-center a:hover {
+      opacity: 1;
+      color: #5cff00;
+    }
+
+    .nav-right {
+      display: flex;
+      justify-content: flex-end;
+      gap: 18px;
+    }
+
+    .nav-right a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      transition: 0.3s;
+    }
+
+    .nav-right a:hover {
       opacity: 1;
       color: #5cff00;
     }
@@ -204,7 +237,8 @@
         grid-template-columns: 1fr;
       }
 
-      .nav-links {
+      .nav-center,
+      .nav-right {
         display: none;
       }
     }
@@ -215,12 +249,22 @@
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <div class="nav-logo">Aradhya.</div>
-  <div class="nav-links">
+  <div class="nav-left">
+    <span class="nav-logo">Aradhya.</span>
+  </div>
+
+  <div class="nav-center">
     <a href="#home">Home</a>
+    <a href="#about">About Me</a>
     <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="nav-right">
+    <a href="https://www.linkedin.com/in/aradhya-kumar" target="_blank">in</a>
+    <a href="https://x.com/" target="_blank">X</a>
     <a href="https://github.com/aradhya-kumar" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/aradhya-kumar" target="_blank">LinkedIn</a>
   </div>
 </nav>
 
